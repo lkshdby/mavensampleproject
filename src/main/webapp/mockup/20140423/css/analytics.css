@@ -1,0 +1,162 @@
+#ibm-masthead {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 1000;
+}
+
+.ibm-application #ibm-masthead .ibm-menu-subtabs {
+  background-color: rgb(215, 215, 215);
+  background: rgb(215, 215, 215);
+  background-image: none; 
+  height: 50px;
+  border-bottom: #ffffff;
+}
+
+.ibm-application #ibm-masthead .ibm-menu-subtabs h2.ibm_cloud {
+  color: rgb(102, 102, 102);
+  font-family: Arial, sans-serif;
+  font-weight: normal;
+  font-size: 1.1em;
+  text-shadow: none;
+  padding: 14px 0 0 0px;
+}
+
+#ibm-content .ibm-columns .ibm-col-6-3 {
+  width: 440px;
+  float: left;
+  clear: none;
+  margin: 0px 10px 10px;
+}
+
+#ibm-content .ibm-columns .ibm-col-6-4 {
+  width: 550px;
+  float: left;
+  clear: none;
+  margin: 0px 10px 10px;
+}
+
+
+#ibm-pcon {
+  padding-left: 0;
+  width: 980px;
+  padding: 0px 0px 10px 0px;
+  background: none repeat scroll 0% 0% rgb(255, 255, 255);
+}  
+
+#ibm-content {
+  min-height: 500px;
+  width: 100%;
+  padding-top:20px;
+}
+
+h1.mkt {
+  font-size: 28px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: 300;  
+}
+
+.ibm-application #ibm-content-main {
+  margin-top: 0;
+  padding-left: 0;
+  padding-right: 0;
+  width: 980px;
+}
+
+#ibm-secondhead {
+    background-color: rgb(215, 215, 215);
+    min-width: 960px;
+    height: 50px;
+    left: 0px;
+    position: fixed;
+    right: 0px;
+    top: 42px;
+/*    z-index: 1000;*/
+    z-index: -1; 
+}
+
+#ibm-outlinks {
+    float: left;
+    margin-left: 15px;
+}
+
+#ibm-outlinks ul {
+    padding-left: 0px;
+    list-style: none outside none;
+    margin: 0px;
+}
+
+#ibm-outlinks li a {
+    padding: 15px;
+}
+
+#ibm-outlinks li {
+    float: left;
+    text-indent: -9999px;
+}
+
+#ibm-outlinks li a:hover {
+  background-position: center bottom;
+}
+
+#ibm-cloud-link {
+  background: url('http://docs.marketplace.ibmcloud.com/images/ibm-cloud.png');
+  width: 155px;
+  height: 20px;
+  display: block;
+  border-right: 1px solid white;
+}
+
+#ibm-marketplace-link {
+    background: url("http://docs.marketplace.ibmcloud.com/images/ibm-marketplace.png") repeat scroll 0% 0% transparent;
+    width: 131px;
+    height: 20px;
+    display: block;
+}
+
+#usernav:before, #usernav:after {
+    content: " ";
+    display: table;
+}
+#usernav:after {
+    clear: both;
+}
+#usernav, #usernav li {
+    display: inline-block;
+    float: none;
+    font-size: 14px;
+    vertical-align: top;
+}
+
+
+#usernav .dropdown {
+    top: 24px;
+}
+#usernav .dropdown ul {
+    border-bottom-color: #777777;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-left-color-ltr-source: physical;
+    border-left-color-rtl-source: physical;
+    border-left-color-value: #777777;
+    border-right-color-ltr-source: physical;
+    border-right-color-rtl-source: physical;
+    border-right-color-value: #777777;
+    border-top-color: #777777;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+#usernav .dropdown ul li a {
+    color: #666666;
+    text-shadow: none;
+}
+#usernav .dropdown ul li a:hover {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: #E6E7E9;
+    background-image: none;
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: repeat;
+    background-size: auto auto;
+}

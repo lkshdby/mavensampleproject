@@ -1,0 +1,61 @@
+<div>
+	<div data-dojo-attach-point="mainDashboard">
+		<div id="offering_name"><p>${offeringName}</p><p>${subOfferingName}</p></div>
+		<p class="quota" data-dojo-attach-point="quotaNode"></p>
+		<div id="gatewayInformation" style="display: none;">
+			<div data-dojo-attach-point="gatewayDescription"></div>
+			<br/>
+			<div class="clearfix" style="padding-bottom: 10px">
+				<span style="float: right; margin-right: 15px;"><a class="ibm-reset-link" href="#" data-dojo-attach-point="refreshGatewayLink"></a></span>
+			</div>
+			<table 
+				summary="Data table with alternating column example"
+				class="ibm-data-table ibm-sortable-table ibm-alternating cpe_layout" data-dojo-attach-point="gatewayList" id="gatewayList">
+				<thead>
+					<tr>
+						<th scope="col" style="width:40%"></th>
+						<th scope="col" style="width:30%"></th>	
+						<th scope="col" style="width:20%"></th>
+						<th scope="col" style="width:10%"></th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+	 	<div data-dojo-attach-point="offeringDescription"></div>
+		<br/>
+		<div class="clearfix" style="padding-bottom: 10px">
+			<span data-dojo-attach-point="clusterFilterLabel"></span>
+			<input data-dojo-attach-point="clusterFilterInput">
+			<button data-dojo-attach-point="clusterFilterButton" type="button"></button>
+			<span style="float:right; margin-right: 15px;"><a class="ibm-add1-link" href="#" data-dojo-attach-point="addClusterLink" ></a></span>
+			<span style="float: right; margin-right: 15px;"><a class="ibm-reset-link" href="#" data-dojo-attach-point="refreshLink"></a></span>
+		</div>		
+		<table 
+			summary="Data table with alternating column example"
+			class="ibm-data-table ibm-sortable-table ibm-alternating cpe_layout" data-dojo-attach-point="clusterList" id="clusterList">
+			<thead>
+				<tr>
+					<th scope="col" style="width:28%"></th>
+					<th scope="col" style="width:18%"></th>
+					<th scope="col" style="width:10%"></th>
+					<th scope="col" style="width:14%"></th>
+					<th scope="col" style="width:10%"></th>
+ 					<th scope="col" style="width:10%"></th>
+ 					<th scope="col" style="width:10%"></th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+
+		<div id="offering_content_footer">
+			<div data-dojo-attach-point="offeringFooter"></div>
+		</div>
+	</div>
+	
+	<!-- wizard -->
+	<div id="wizard_container" data-dojo-type="platform/smart_wizard" data-dojo-attach-point="addClusterWizard" style="display:none">
+	</div>
+</div>

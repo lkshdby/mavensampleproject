@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>                                          
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+ http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd" version="1.0">
+ <persistence-unit name="cpe" transaction-type="RESOURCE_LOCAL">    
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>            
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <!--  <class>com.ibm.scas.analytics.persistence.beans.PcmaeBackend</class>                    
+    <class>com.ibm.scas.analytics.persistence.beans.Account</class>                    
+    <class>com.ibm.scas.analytics.persistence.beans.Cluster</class>                    
+    <class>com.ibm.scas.analytics.persistence.beans.ClusterDetails</class>                    
+    <class>com.ibm.scas.analytics.persistence.beans.Gateway</class>                    
+    <class>com.ibm.scas.analytics.persistence.beans.IPAddress</class>                    
+    <class>com.ibm.scas.analytics.persistence.beans.Plugin</class>                    
+    <class>com.ibm.scas.analytics.persistence.beans.Subnet</class>                    
+    <class>com.ibm.scas.analytics.persistence.beans.Subcriber</class>                    
+    <class>com.ibm.scas.analytics.persistence.beans.Vlan</class>                    
+    -->
+    <properties>
+    	<property name="eclipselink.weaving" value="static"/>
+	</properties>
+  </persistence-unit>                                                               
+</persistence>

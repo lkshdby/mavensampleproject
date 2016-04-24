@@ -1,0 +1,36 @@
+# Makefile rules for IBM Cloud Applications Services (hpccloud component)
+
+UNAME_S := $(shell uname -s)
+# Check for Mac, otherwise default to /usr/bin/rpmbuild for Linux/Cygwin
+ifeq ($(UNAME_S),Darwin)
+	RPMBUILD := /opt/local/bin/rpmbuild
+	DOS2UNIX := /opt/local/bin/dos2unix
+else
+	RPMBUILD := /usr/bin/rpmbuild
+	DOS2UNIX := /usr/bin/dos2unix
+endif
+
+# In the RTC build, we are putting the output files in "target" directory
+TARGET_PREFIX=target
+
+TOP := $(dir $(lastword $(MAKEFILE_LIST)))
+
+# Variables to input into the RPM info
+BUILDER := $(shell whoami)
+DATE := $(shell date +%Y/%m/%d-%H%M)
+# Put the release date in the RPM name, this is Week of Year + Day of Week
+RELEASE_DATE := $(shell date +%V0%w)
+
+PREFIX=opt
+COMPANY=ibm
+PRODUCT=cpe
+
+PROD_PATH=$(PREFIX)/$(COMPANY)/$(PRODUCT)
+
+
+MKDIR_P := mkdir -p
+CP      := cp
+TAR		:= tar
+SED		:= sed
+FIND	:= /usr/bin/find
+XARGS	:= /usr/bin/xargs

@@ -1,0 +1,82 @@
+
+<!--
+Automatically created by Apache Tomcat JspC.
+Place this fragment in the web.xml before all icon, display-name,
+description, distributable, and context-param elements.
+-->
+
+    <servlet>
+        <servlet-name>jsp.access_002dcontrol_jsp</servlet-name>
+        <servlet-class>jsp.access_002dcontrol_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>jsp.capacity_jsp</servlet-name>
+        <servlet-class>jsp.capacity_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>jsp.admin.promo_002dcode_jsp</servlet-name>
+        <servlet-class>jsp.admin.promo_002dcode_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>jsp.admin.index_jsp</servlet-name>
+        <servlet-class>jsp.admin.index_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>jsp.index_jsp</servlet-name>
+        <servlet-class>jsp.index_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>jsp.error_jsp</servlet-name>
+        <servlet-class>jsp.error_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>jsp.logout_jsp</servlet-name>
+        <servlet-class>jsp.logout_jsp</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>jsp.access_002dcontrol_jsp</servlet-name>
+        <url-pattern>/access-control.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>jsp.capacity_jsp</servlet-name>
+        <url-pattern>/capacity.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>jsp.admin.promo_002dcode_jsp</servlet-name>
+        <url-pattern>/admin/promo-code.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>jsp.admin.index_jsp</servlet-name>
+        <url-pattern>/admin/index.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>jsp.index_jsp</servlet-name>
+        <url-pattern>/index.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>jsp.error_jsp</servlet-name>
+        <url-pattern>/error.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>jsp.logout_jsp</servlet-name>
+        <url-pattern>/logout.jsp</url-pattern>
+    </servlet-mapping>
+
+<!--
+All session-config, mime-mapping, welcome-file-list, error-page, taglib,
+resource-ref, security-constraint, login-config, security-role,
+env-entry, and ejb-ref elements should follow this fragment.
+-->

@@ -1,0 +1,10 @@
+INSERT INTO ACCOUNTS (partner, marketUrl, id, offeringId) VALUES ('ACME11', 'https://ibmbluemix.appdirect.com', 1004, 'clms');
+INSERT INTO ACCOUNTS (partner, marketUrl, id, offeringId) VALUES ('ACME11', 'https://ibmbluemix.appdirect.com', 1005, 'streams');
+INSERT INTO ACCOUNTS (partner, marketUrl, id, offeringId) VALUES ('ACME11', 'https://ibmbluemix.appdirect.com', 1006, 'bi');
+INSERT INTO ACCOUNTS (partner, marketUrl, id, offeringId) VALUES ('ACME11', 'https://ibmbluemix.appdirect.com', 1009, 'bi');
+INSERT INTO ACCOUNTS (partner, marketUrl, id, offeringId) VALUES ('ACME11', 'https://ibmbluemix.appdirect.com', 1011, 'clms');
+INSERT INTO ACCOUNTS (partner, marketUrl, id, offeringId) VALUES ('IBM', 'https://marketplace.ibmcloud.com', 1066, 'biginsights');
+INSERT INTO ACCOUNTS (partner, marketUrl, id, offeringId) VALUES ('BlueMix', 'https://ace.ng.bluemix.net', 1070, 'bi');
+INSERT INTO ACCOUNTS (partner, marketUrl, id, offeringId) VALUES ('IBM', 'https://marketplace.ibmcloud.com', 1074, 'biginsights');
+INSERT INTO ACCOUNTS (partner, marketUrl, id, offeringId) VALUES ('IBM', 'https://marketplace.ibmcloud.com', 1075, 'biginsights');
+INSERT INTO ACCOUNTS (partner, marketUrl, id, offeringId) VALUES ('BlueMix', 'https://ace.ng.bluemix.net', 1077, 'bi');

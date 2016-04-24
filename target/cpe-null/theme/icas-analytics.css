@@ -1,0 +1,381 @@
+#ibm-masthead {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 1000;
+}
+
+.ibm-application #ibm-masthead .ibm-menu-subtabs {
+  background-color: rgb(215, 215, 215);
+  background: rgb(215, 215, 215);
+  background-image: none; 
+  height: 50px;
+  border-bottom: #ffffff;
+}
+
+.ibm-application #ibm-masthead .ibm-menu-subtabs h2.ibm_cloud {
+  color: rgb(102, 102, 102);
+  font-family: Arial, sans-serif;
+  font-weight: normal;
+  font-size: 1.1em;
+  text-shadow: none;
+  padding: 14px 0 0 0px;
+}
+
+#ibm-content .ibm-columns .ibm-col-6-3 {
+  width: 440px;
+  float: left;
+  clear: none;
+  margin: 0px 10px 10px;
+}
+
+#ibm-content .ibm-columns .ibm-col-6-4 {
+  width: 550px;
+  float: left;
+  clear: none;
+  margin: 0px 10px 10px;
+}
+
+
+#ibm-pcon {
+  padding-left: 0;
+  width: 980px;
+  padding: 0px 0px 10px 0px;
+  background: none repeat scroll 0% 0% rgb(255, 255, 255);
+}  
+
+#ibm-content {
+  min-height: 500px;
+  width: 100%;
+  padding-top:20px;
+}
+
+h1.mkt {
+  font-size: 28px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: 300;  
+}
+
+.ibm-application #ibm-content-main {
+  margin-top: 0;
+  padding-left: 0;
+  padding-right: 0;
+  width: 980px;
+}
+
+#ibm-secondhead {
+    background-color: rgb(215, 215, 215);
+    min-width: 960px;
+    height: 50px;
+    left: 0px;
+    position: fixed;
+    right: 0px;
+    top: 62px;
+/*    z-index: 1000;*/
+    z-index: -1; 
+}
+
+#ibm-outlinks {
+    float: left;
+    margin-left: 15px;
+}
+
+#ibm-outlinks ul {
+    padding-left: 0px;
+    list-style: none outside none;
+    margin: 0px;
+}
+
+#ibm-outlinks li a {
+    padding: 15px;
+}
+
+#ibm-outlinks li {
+    float: left;
+    text-indent: -9999px;
+}
+
+#ibm-outlinks li a:hover {
+  background-position: center bottom;
+}
+
+#ibm-cloud-link {
+  background: url('http://docs.marketplace.ibmcloud.com/images/ibm-cloud.png');
+  width: 155px;
+  height: 20px;
+  display: block;
+  border-right: 1px solid white;
+}
+
+#ibm-marketplace-link {
+    background: url("http://docs.marketplace.ibmcloud.com/images/ibm-marketplace.png") repeat scroll 0% 0% transparent;
+    width: 131px;
+    height: 20px;
+    display: block;
+}
+
+
+
+
+
+#clusterGrid {
+	height: 300px;
+}
+p.dialog_message {
+	font-size: 13px;
+}
+p.todo {
+	font-size: 13px;
+	font-weight: bold;
+	color: #ff8080;
+}
+
+#wizard_container div.content_pane {
+	padding: 4px 4px 4px 4px;
+}
+
+#wizard_container p {
+	padding: 2px 2px 2px 2px !important;
+	font-size: 12px;
+}
+
+#wizard_container p.framework_description {
+	color: #404040;	
+}
+
+#wizard_container p.parameter_section_head {
+	font-weight: bold;
+	font-size: 14px;
+	margin-top: 16px;
+	margin-bottom: 4px;
+}
+
+#wizard_container p.parameter_description {
+	color: #808080;
+}
+
+#wizard_container p.edit_links {
+	text-align: right;
+}
+#wizard_container .heading {
+	font-size: 20px;
+	font-weight: bold;
+	color: #303030;
+	margin-top: 6px;
+	margin-bottom: 2px;
+}
+
+#wizard_container .wizard_step {
+	font-size: 14px;
+	color: #404040;
+	margin-top: 2px;
+	margin-bottom: 10px;
+}
+
+#wizard_container td.name_column {
+	width: 200px;
+	vertical-align: top;
+	padding-top: 3px;
+}
+
+#wizard_container .parameter_name {
+	font-weight: bold;
+	vertical-align: top;
+	font-size: 12px;
+}
+
+#wizard_container .parameter_value {
+	padding-right: 40px;
+	font-size: 12px;
+}
+
+#wizard_container .clicky:hover {
+	text-decoration: underline;
+	cursor: pointer;
+	color: navy;
+}
+
+#wizard_container .large {
+	font-size: 16px;	
+	font-weight: bold;
+}
+
+#wizard_container div.indent_box {
+	padding-left: 20px;
+}
+
+#promo_code_container p {
+/*	padding: 4px 2px 4px 2px !important;
+	font-size: 12px; */
+}
+
+#promo_code_container td {
+/*	padding: 4px 2px 4px 2px !important;
+	font-size: 12px; */
+}
+
+#promo_code_container .heading {
+	font-weight: bold;
+	font-size: 14px;
+}
+
+#promo_code_container .parameter_name {
+	font-weight: bold;
+	font-size: 14px;
+	width: 140px;
+}
+#promo_code_container .parameter_value {
+	padding-right: 40px;
+	font-size: 14px;
+	color: #404040;
+}
+#promo_code_container .invalid_access_code {
+	border: solid 1px #800000;
+	padding: 5px 10px 5px 10px !important;
+	font-size: 14px;
+	color: #800000;
+	background: #ffd0d0;
+}
+
+table.cpe_layout {
+	border: 0px;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.cluster_name {
+	position: relative;
+}
+
+.cluster_name .cluster_details { 
+	display: none;
+}
+
+.cluster_name:hover .cluster_details {
+	display: block;
+}
+
+.cluster_details {
+	position: absolute;
+	left: 40px;
+	z-index: 1000;
+	border: 1px solid #ffd971;
+	background-color: #fffdce;
+	padding: 5px;
+	font-size: 12px;
+	width: 350px;
+}
+
+.cluster_details p {
+	padding: 2px !important;
+}
+
+#cpe-dashboard {
+	min-height: 400px;
+}
+
+#cpe-dashboard #offering_name {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+}
+
+#cpe-dashboard #offering_name p {
+	padding-top: 2px;
+	padding-bottom: 2px;
+	font-size: 20px;
+	font-weight: 200;
+}
+
+#cpe-dashboard #offering_name p:first-child {
+	font-size: 28px;
+	font-weight: 300;
+}
+
+#cpe-dashboard .quota {
+	margin: 10px 0px 10px 0px;
+	font-size: 14px;
+	font-weight: bold;
+	color: #404040;
+}
+
+#cpe-dashboard .enabled {
+	cursor: pointer;
+}
+
+#cpe-dashboard .disabled {
+	cursor: not-allowed;
+	opacity: 0.1;
+}
+
+.loading {
+	background-image: url('loading-gray-64.gif');
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+#transfer_dialog td {
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+#transfer_dialog td.name_column {
+	padding-right: 10px;
+}
+
+#transfer_dialog .parameter_name {
+	font-weight: bold;
+	vertical-align: middle;
+	font-size: 12px;
+}
+
+#transfer_dialog .parameter_value {
+	font-size: 12px;
+}
+
+#transfer_dialog .status {
+	width: 400px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	color: #808080;
+}
+
+#transfer_dialog .parameter_description {
+	color: #808080;
+}
+
+/*
+.collapsible > span {
+	display: none;
+}
+
+.collapsible:hover > span {
+	display: inline;
+}
+*/
+#offering_content_footer {
+	margin-top: 40px;
+	margin-bottom: 50px;
+}
+
+#offering_content_footer h2 {
+	margin-left: 0px !important;
+	margin-bottom: 12px !important;
+}
+
+#offering_content_footer p {
+	padding-top: 0px !important;
+}
+
+.clearfix::after {
+	content: " ";
+	display: block;
+	height: 0;
+	clear: both;
+}
+
+#build-info p {
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	color: #c0c0c0;
+	font-size: 10px;
+}

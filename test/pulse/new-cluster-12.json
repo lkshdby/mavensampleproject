@@ -1,0 +1,11 @@
+{
+	"name": "pulse-12",
+	"description": "please",
+	"size": 2,
+	"parameters": {
+		"DATA_IN_USERNAME": "IBMOS278059-1:ssotest1",
+		"DATA_IN_APIKEY": "f91b005f21104e3e4c828ca0582367522b26f8823c70b0bfcbd41847fdce5bf0",
+		"DATA_IN_SOURCE": "swift://pulse.softlayer/NASDAQ_prices_cleaned.csv",
+		"DATA_IN_DESTINATION": "/Raw_Data"
+	}
+}

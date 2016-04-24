@@ -1,0 +1,23 @@
+<div>
+	<div data-dojo-attach-point="capacityWarning">
+		<div id="offering_name"><p>${offeringName}</p><p>${subOfferingName}</p></div>
+		<hr></hr>
+		<form method='post'>
+		<p>This service is in limited preview with controlled access. In order to use this service,
+		 please enter the access code associated with your email address in the field below.</p>
+		<p>To request an access code please email <a href='mailto:bigcloud@us.ibm.com'>bigcloud@us.ibm.com</a> 
+		and specify the product you are requesting.</p>
+		<p></p>
+<!--
+		<input type="hidden" name="offering_id" value="${offeringId}"/>
+		<input type="hidden" name="customer_email" value="${email}"/>
+ -->
+		<hr></hr>
+  		<p><span class="parameter_name">Your email:</span> <span class="parameter_value">${email}</span></p>
+		<p style="margin-top: 10px"><span class="parameter_name"><label for="access_code">Access code:</label></span> 
+		<input style="width: 400px" name="access_code" id="access_code" size="50" value="" type="text" /> 
+		<input value="Submit" type="submit" name="submit" class="ibm_submit_btn" /></p>
+		<p class="invalid_access_code" style="display:none" data-dojo-attach-point="invalidAccessCode">You have entered an invalid access code: <span style="font-family: courier; font-weight: bold">${accessCode}</span></p>
+		</form>
+	</div>
+</div>

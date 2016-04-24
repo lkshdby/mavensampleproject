@@ -1,0 +1,10 @@
+com/ibm/scas/analytics/test/TestCPEDump.class
+com/ibm/scas/analytics/test/persistence/InMemoryDerbyPersistence.class
+com/ibm/scas/analytics/test/TestPromoCode.class
+com/ibm/scas/analytics/test/TestSoftLayerAccountService.class
+com/ibm/scas/analytics/test/TestVlanService.class
+com/ibm/scas/analytics/test/TestGatewayService.class
+com/ibm/scas/analytics/test/TestPersistenceService.class
+com/ibm/scas/analytics/test/TestReserveNetwork.class
+com/ibm/scas/analytics/test/TestSubnetService.class
+com/ibm/scas/analytics/test/BaseTestCase.class

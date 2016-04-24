@@ -1,0 +1,296 @@
+CREATE TABLE PCMAEBACKENDS (
+  id 			VARCHAR(50),
+  url 			VARCHAR(250),
+  account 		VARCHAR(50),
+  username 		VARCHAR(50),
+  password 		VARCHAR(250),
+  PRIMARY KEY(id)
+);
+
+CREATE TABLE PLUGINS (
+  id 			VARCHAR(50),
+  className 	VARCHAR(250),
+  source 		VARCHAR(250),
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE PLUGINPARAMS (
+  plugin		VARCHAR(50),
+  name			VARCHAR(50),
+  value			VARCHAR(250),
+  FOREIGN KEY (plugin) REFERENCES PLUGINS(id) ON DELETE RESTRICT
+);
+
+CREATE TABLE CONTENTMAP (
+  id			VARCHAR(50),
+  url			VARCHAR(500),
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE OFFERINGS (
+  id			VARCHAR(50) NOT NULL,
+  oauthKey		VARCHAR(250),
+  oauthSecret	VARCHAR(250),
+  name			VARCHAR(250),
+  plugin		VARCHAR(50),
+  urlPath		VARCHAR(50),
+  multiuser 	BOOLEAN,
+  PRIMARY KEY (id),
+  FOREIGN KEY (plugin) REFERENCES PLUGINS(id) ON DELETE RESTRICT,
+  FOREIGN KEY (urlPath) REFERENCES CONTENTMAP(id) ON DELETE RESTRICT
+);
+
+CREATE TABLE CPELOCATIONS (
+  name				VARCHAR(100),
+  url				VARCHAR(200),
+  pcmaeBackendId 	VARCHAR(50),
+  PRIMARY KEY (name),
+  FOREIGN KEY (pcmaeBackendId) REFERENCES PCMAEBACKENDS(id) ON DELETE RESTRICT
+);
+
+CREATE TABLE OFFERINGLOCATIONS (
+  id VARCHAR(36) NOT NULL,
+  offeringId		VARCHAR(50),
+  cpeLocationName	VARCHAR(100),
+  PRIMARY KEY (id),
+  FOREIGN KEY (offeringId) REFERENCES OFFERINGS(id) ON DELETE RESTRICT,
+  FOREIGN KEY (cpeLocationName) REFERENCES CPELOCATIONS(name) ON DELETE RESTRICT
+);
+
+CREATE TABLE ACCOUNTS (
+  id			VARCHAR(36) NOT NULL,
+  offeringId	VARCHAR(50),
+  marketUrl		VARCHAR(500),
+  partner		VARCHAR(500),
+  expiration	BIGINT,
+  quantity		INTEGER,
+  edition 		VARCHAR(100),
+  state 		INTEGER,
+  PRIMARY KEY (id),
+  FOREIGN KEY (offeringId) REFERENCES OFFERINGS(id) ON DELETE RESTRICT
+);
+
+CREATE TABLE ACCOUNT_PARAMS (
+  accountId VARCHAR(36) NOT NULL,
+  name VARCHAR(250),
+  value VARCHAR(4096),
+  FOREIGN KEY (accountId) REFERENCES ACCOUNTS(id) ON DELETE CASCADE
+);
+
+CREATE TABLE SUBSCRIBERS (
+  id			VARCHAR(36) NOT NULL,
+  apiKey		VARCHAR(250),
+  type			INTEGER,
+  accountId		VARCHAR(36),
+  externalId	VARCHAR(500),
+  name			VARCHAR(500),
+  PRIMARY KEY (id),
+  FOREIGN KEY (accountId) REFERENCES ACCOUNTS(id) ON DELETE CASCADE
+);
+
+CREATE TABLE CLUSTERS (
+  id			VARCHAR(36) NOT NULL,
+  owner			VARCHAR(36),
+  name			VARCHAR(250),
+  description	VARCHAR(250),
+  clusterId		VARCHAR(250),
+  size			INTEGER,
+  state			INTEGER,
+  launchTime	BIGINT,
+  terminateTime	BIGINT,
+  currentStep	VARCHAR(30),
+  PRIMARY KEY (id),
+  FOREIGN KEY (owner) REFERENCES SUBSCRIBERS(id) ON DELETE CASCADE
+);
+
+CREATE TABLE CLUSTER_PARAMS (
+  clusterId VARCHAR(36) NOT NULL,
+  name VARCHAR(250),
+  value VARCHAR(4096),
+  FOREIGN KEY (clusterId) REFERENCES CLUSTERS(id) ON DELETE CASCADE
+);
+
+CREATE TABLE SOFTLAYERACCOUNTS (
+  id 			VARCHAR(36) NOT NULL,
+  url			VARCHAR(50),
+  username		VARCHAR(64),
+  apiKey 		VARCHAR(128),
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE GATEWAYS (
+  id VARCHAR(36) NOT NULL,
+  softLayerId	INTEGER,
+  accountId		VARCHAR(36),
+  type			VARCHAR(10),
+  softLayerAccountId  VARCHAR(36) NOT NULL,	
+  cpeLocationName VARCHAR(100) NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (accountId) REFERENCES ACCOUNTS(id) ON DELETE CASCADE,
+  FOREIGN KEY (softLayerAccountId) REFERENCES SOFTLAYERACCOUNTS(id) ON DELETE RESTRICT,
+  FOREIGN KEY (cpeLocationName) REFERENCES CPELOCATIONS(name) ON DELETE RESTRICT
+);
+
+CREATE TABLE GATEWAY_SSL_CERTS (
+  gatewayId    VARCHAR(36) NOT NULL,
+  memberIp     VARCHAR(36) NOT NULL,
+  username		VARCHAR(25),
+  password		VARCHAR(50),  
+  sslCert      VARCHAR(1024) NOT NULL,
+  FOREIGN KEY (gatewayId) REFERENCES GATEWAYS(id) ON DELETE CASCADE
+);
+
+CREATE TABLE VLANS (
+  id VARCHAR(36) NOT NULL,
+  softLayerId	INTEGER,
+  clusterId	VARCHAR(36),
+  gatewayId		VARCHAR(36),
+  softLayerAccountId  VARCHAR(36) NOT NULL,
+  cpeLocationName VARCHAR(100) NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (gatewayId) REFERENCES GATEWAYS(id),
+  FOREIGN KEY (clusterId) REFERENCES CLUSTERS(id),
+  FOREIGN KEY (softLayerAccountId) REFERENCES SOFTLAYERACCOUNTS(id) ON DELETE RESTRICT,
+  FOREIGN KEY (cpeLocationName) REFERENCES CPELOCATIONS(name) ON DELETE RESTRICT
+);
+
+CREATE TABLE SUBNETS (
+  id VARCHAR(36) NOT NULL,
+  softLayerId	INTEGER,
+  vlanId		VARCHAR(36) NOT NULL,
+  networkAddr	VARCHAR(15),
+  gatewayAddr	VARCHAR(15),
+  broadcastAddr	VARCHAR(15),
+  cidr			INTEGER,
+  softLayerAccountId  VARCHAR(36),
+  PRIMARY KEY (id),
+  FOREIGN KEY (vlanId) REFERENCES VLANS(id) ON DELETE CASCADE,
+  FOREIGN KEY (softLayerAccountId) REFERENCES SOFTLAYERACCOUNTS(id) ON DELETE RESTRICT
+);
+
+CREATE TABLE IPADDRESS (
+  id VARCHAR(36) NOT NULL,
+  ipAddress 	BIGINT NOT NULL,
+  subnetId		VARCHAR(36) NOT NULL,
+  hostname		VARCHAR(64),
+  clusterId		VARCHAR(36),
+  tierName		VARCHAR(50),
+  PRIMARY KEY (id),
+  FOREIGN KEY (subnetId) REFERENCES SUBNETS(id) ON DELETE CASCADE,
+  FOREIGN KEY (clusterId) REFERENCES CLUSTERS(id) ON DELETE CASCADE
+);
+
+
+CREATE TABLE VPNTUNNELS (
+	id     		VARCHAR(36) NOT NULL,
+	custIpAddr	VARCHAR(36) NOT NULL,
+	gatewayId	VARCHAR(36),
+	PRIMARY KEY (id),
+	FOREIGN KEY (gatewayId) REFERENCES GATEWAYS(id) ON DELETE RESTRICT
+);
+
+CREATE TABLE VPNTUNNEL_PARAMS (
+	vpnTunnelId	VARCHAR(36) NOT NULL,
+	name		VARCHAR(50) NOT NULL,
+	value		VARCHAR(255),
+	FOREIGN KEY (vpnTunnelId) REFERENCES VPNTUNNELS(id) on DELETE CASCADE
+);
+
+
+CREATE TABLE SOFTLAYERORDERS (
+  id VARCHAR(50),
+  softLayerId INT,
+  clusterId VARCHAR(36),
+  tierName VARCHAR(100),
+  softLayerAccountId VARCHAR(36),
+  PRIMARY KEY (id),
+  FOREIGN KEY (clusterId) REFERENCES CLUSTERS(id) ON DELETE CASCADE,
+  FOREIGN KEY (softLayerAccountId) REFERENCES SOFTLAYERACCOUNTS(id) ON DELETE CASCADE
+);
+
+CREATE TABLE STEPDETAILS (
+  id VARCHAR(36) NOT NULL,
+  stepNumber INTEGER,
+  pluginId VARCHAR(50),
+  name varchar(50),
+  description varchar(250),
+  formTitle varchar(45) NOT NULL,
+  formDescription varchar(250) NOT NULL,
+  isEnabled SMALLINT,
+  PRIMARY KEY (id),
+  FOREIGN KEY (pluginId) REFERENCES PLUGINS(id) ON DELETE RESTRICT
+);
+
+CREATE TABLE CONTROLTYPES (
+  id VARCHAR(36) NOT NULL,
+  name varchar(45),
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE FORMFIELDS (
+  id VARCHAR(36) NOT NULL,
+  stepId VARCHAR(36),
+  name varchar(45),
+  label varchar(45),
+  typeId VARCHAR(36) NOT NULL,
+  orderIndex INTEGER NOT NULL,
+  value varchar(45),
+  attachedRESTEvent varchar(45),
+  description varchar(1000),
+  defaultValue varchar(45),
+  isMandetory SMALLINT,
+  isEnabled SMALLINT,
+  isOnDemand SMALLINT,
+  helpDescription varchar(500) DEFAULT NULL,
+  isHelpEnabled SMALLINT,
+  maximumValue INTEGER,
+  minimumValue INTEGER,
+  PRIMARY KEY (id),
+  FOREIGN KEY (stepId) REFERENCES STEPDETAILS(id) ON DELETE CASCADE,
+  FOREIGN KEY (typeId) REFERENCES CONTROLTYPES(id) ON DELETE RESTRICT
+);
+
+
+CREATE TABLE DATACENTERS (
+  id VARCHAR(36) NOT NULL,
+  name varchar(100) NOT NULL,
+  PRIMARY KEY (id)
+);
+
+
+CREATE TABLE SOFTLAYERLOCATIONS (
+  name varchar(50) NOT NULL,
+  publicUrl varchar(200),
+  privateUrl varchar(200),
+  PRIMARY KEY (name)
+);
+
+
+CREATE TABLE DATACENTERFIELDSMAP (
+  id VARCHAR(36) NOT NULL,
+  dataCenterId VARCHAR(36) NOT NULL,
+  formFieldId VARCHAR(36) NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (dataCenterId) REFERENCES DATACENTERS(id) ON DELETE CASCADE,
+  FOREIGN KEY (formFieldId) REFERENCES FORMFIELDS(id) ON DELETE CASCADE
+);
+
+CREATE TABLE NODECONFIGURATIONS (
+  id varchar(36) NOT NULL,
+  pluginId varchar(50),
+  nodeSize varchar(45),
+  specification varchar(250),
+  dataBandwidth varchar(250),
+  usedFor varchar(250),
+  PRIMARY KEY (id),
+  FOREIGN KEY (pluginId) REFERENCES PLUGINS(id)
+);
+
+CREATE TABLE DATATRANSFERFIELDSMAP (
+  dataCenterId INTEGER NOT NULL,
+  formFieldId INTEGER NOT NULL,
+  id varchar(36) NOT NULL,
+  PRIMARY KEY (dataCenterId,formFieldId)
+);
+
+

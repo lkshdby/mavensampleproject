@@ -1,0 +1,135 @@
+<div>
+	<div data-dojo-attach-point="mainDashboard">
+		<h1 class="mkt">All Clusters</h1>
+	 	<div data-dojo-attach-point="offeringDescription"></div>
+
+		<br/>
+		<table 
+			summary="Data table with alternating column example"
+			class="ibm-data-table ibm-sortable-table ibm-alternating cpe_layout" data-dojo-attach-point="clusterList">
+			<caption>
+				<label for="name_filter">Filter by name:</label> <input name="name_filter" id="name_filter"
+					size="20" value="" type="text" /> <input value="SEARCH"
+					type="submit" name="ibm-submit" class="ibm_submit_btn" /> 
+<!-- 				<span style="float: right; margin-right: 35px;"><a class="ibm-add1-link" href="#" data-dojo-attach-point="addClusterLink">Add new cluster</a></span>
+ -->				<span style="float: right; margin-right: 15px;"><a class="ibm-reset-link" href="#" data-dojo-attach-point="refreshLink">Refresh</a></span>
+			</caption>
+			<thead>
+				<tr>
+					<th scope="col" style="width:22%">Offering Name</th>
+					<th scope="col" style="width:24%">Cluster Name</th>
+					<th scope="col" style="width:20%">Owner (ID)</th>
+					<th scope="col" style="width:12%">Launch Time</th>
+					<th scope="col" style="width:12%">Expiration Time</th>
+					<th scope="col" style="width:10%">Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+
+		<div id="offering_content_footer">
+			<div data-dojo-attach-point="offeringFooter"></div>
+		</div>
+	</div>
+		
+	<!-- Delete dialog -->
+	<div data-dojo-type="dijit/Dialog" data-dojo-attach-point="deleteDialog" title="Delete cluster" style="width: 360px">
+		<div class="dijitDialogPaneContentArea" style='padding: 0px; font-size: 14px'>
+			<div style='padding: 10px'>
+				<p class="dialog_message">WARNING: If you delete a cluster, you will lose  
+					all data that are not saved or exported from the cluster. Are you sure that you want to delete this cluster?</p><br> 
+			</div>
+		</div>
+		<div class="dijitDialogPaneActionBar">
+			<button data-dojo-type="dijit/form/Button" type="button" data-dojo-attach-point="deleteDialogDeleteButton">Delete</button>
+			<button data-dojo-type="dijit/form/Button" type="button" data-dojo-attach-point="deleteDialogCancelButton">Cancel</button>
+		</div>
+	</div>
+	
+	<!-- Edit dialog -->
+	<div data-dojo-type="dijit/Dialog" data-dojo-attach-point="editDialog" title="Edit cluster" style="width: 360px">
+		<div class="dijitDialogPaneContentArea" style='padding: 0px; font-size: 14px'>
+			<div style='padding: 10px'>
+				<p class="dialog_message">Current cluster size: <span data-dojo-attach-point='editDialogCurrentSize'></span></p><br> 
+				<p class="dialog_message"><label for="editDialogDeltaValueInput">Additional nodes to add:</label> <input data-dojo-attach-point='editDialogDeltaValue' id='editDialogDeltaValueInput' type='text' size='10'/></p> 
+			</div>
+		</div>
+		<div class="dijitDialogPaneActionBar">
+			<button data-dojo-type="dijit/form/Button" type="button" data-dojo-attach-point="editDialogConfirmButton">Submit</button>
+			<button data-dojo-type="dijit/form/Button" type="button" data-dojo-attach-point="editDialogCancelButton">Cancel</button>
+		</div>
+	</div>
+	
+	<!-- Data transfer dialog -->
+	<div data-dojo-type="dijit/Dialog" data-dojo-attach-point="dataTransferDialog" title="Transfer data" id="transfer_dialog">
+		<div class="dijitDialogPaneContentArea" style='padding: 0px; font-size: 12px'>
+			<div style='padding: 10px'>
+				<table class="cpe_layout" role="presentation">
+					<tr>
+						<td class='name_column'><span class='parameter_name'><label for="transferUsernameInput">Username:</label></span></td>
+						<td><p class='parameter_value'><input data-dojo-attach-point="transferUsername" id="transferUsernameInput" type="text" size="60" value=""></p></td>
+					</tr>
+					<tr>
+						<td class='name_column'><span class='parameter_name'><label for="transferApiKeyInput">API key:</label></span></td>
+						<td><p class='parameter_value'><input data-dojo-attach-point="transferApiKey" id="transferApiKeyInput" type="text" size="60" value=""></p></td>
+					</tr>
+					<tr>
+						<td class='name_column'><span class='parameter_name'><label for="transferSourceInput">Source:</label></span></td>
+						<td><p class='parameter_value'><input data-dojo-attach-point="transferSource" id="transferSourceInput" type="text" size="60" value=""></p></td>
+					</tr>
+					<tr>
+						<td class='name_column'><span class='parameter_name'><label for="transferDestinationInput">Destination:</label></span></td>
+						<td><p class='parameter_value'><input data-dojo-attach-point="transferDestination" id="transferDestinationInput" type="text" size="60" value=""></p></td>
+					</tr>
+					<tr>
+						<td class='name_column'><span class='parameter_name'>Status:</span></td>
+						<td><p class='parameter_value status' data-dojo-attach-point="transferStatus">Not started</p></td>
+					</tr>
+				</table>
+
+				<br>
+				<p class="ibm-help-link parameter_description">URL format for SoftLayer Object Storage is <span style="font-family: courier">swift://{container}.softlayer/{path}</span></p> 
+			</div>
+		</div>
+		<div class="dijitDialogPaneActionBar">
+			<button data-dojo-type="dijit/form/Button" type="button" data-dojo-attach-point="transferDialogActionButton">Action!</button>
+			<button data-dojo-type="dijit/form/Button" type="button" data-dojo-attach-point="transferDialogCloseButton">Close</button>
+		</div>
+	</div>
+
+	<!-- Wait dialog -->
+	<div data-dojo-type="dijit/Dialog" data-dojo-attach-point="waitDialog" title="Submitting Request" style="min-width: 200px;">
+		<div class="dijitDialogPaneContentArea" style='padding: 0px; font-size: 14px'>
+			<div style='padding: 10px; text-align: center'>
+				<div class="loading" style="height: 150px"></div> 
+				<p class="dialog_message">Please wait ...</p> 
+			</div>
+		</div>
+	</div>
+	
+	<!-- Error dialog -->
+	<div data-dojo-type="dijit/Dialog" data-dojo-attach-point="errorDialog" title="Error" style="width: 400px">
+		<div class="dijitDialogPaneContentArea" style='padding: 0px; font-size: 14px'>
+			<div style='padding: 10px'>
+				<p class="dialog_message">An error has occured while trying to create new cluster.</p><br> 
+				<p class="dialog_message"><span style='font-weight: bold' data-dojo-attach-point="errorDialogErrorMessage"></span></p> 
+			</div>
+		</div>
+		<div class="dijitDialogPaneActionBar" style="text-align:center">
+			<button data-dojo-type="dijit/form/Button" type="button" data-dojo-attach-point="errorDialogOKButton">OK</button>
+		</div>
+	</div>
+
+	<!-- Details dialog -->
+	<div data-dojo-type="dijit/Dialog" data-dojo-attach-point="detailsDialog" title="Details" style="min-width: 400px">
+		<div class="dijitDialogPaneContentArea" style='padding: 0px; font-size: 14px'>
+			<div style='padding: 10px' data-dojo-attach-point='clusterDetails'>
+			</div>
+		</div>
+		<div class="dijitDialogPaneActionBar" style="text-align:center">
+			<button data-dojo-type="dijit/form/Button" type="submit" data-dojo-attach-point="detailsDialogOKButton">OK</button>
+		</div>
+	</div>
+
+</div>

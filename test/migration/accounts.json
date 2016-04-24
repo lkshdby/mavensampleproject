@@ -1,0 +1,62 @@
+[
+  {
+    "partner": "ACME11", 
+    "marketUrl": "https://ibmbluemix.appdirect.com", 
+    "id": 1004, 
+    "offeringId": "clms"
+  }, 
+  {
+    "partner": "ACME11", 
+    "marketUrl": "https://ibmbluemix.appdirect.com", 
+    "id": 1005, 
+    "offeringId": "streams"
+  }, 
+  {
+    "partner": "ACME11", 
+    "marketUrl": "https://ibmbluemix.appdirect.com", 
+    "id": 1006, 
+    "offeringId": "bi"
+  }, 
+  {
+    "partner": "ACME11", 
+    "marketUrl": "https://ibmbluemix.appdirect.com", 
+    "id": 1009, 
+    "offeringId": "bi"
+  }, 
+  {
+    "partner": "ACME11", 
+    "marketUrl": "https://ibmbluemix.appdirect.com", 
+    "id": 1011, 
+    "offeringId": "clms"
+  }, 
+  {
+    "partner": "IBM", 
+    "marketUrl": "https://marketplace.ibmcloud.com", 
+    "id": 1066, 
+    "offeringId": "biginsights"
+  }, 
+  {
+    "partner": "BlueMix", 
+    "marketUrl": "https://ace.ng.bluemix.net", 
+    "id": 1070, 
+    "offeringId": "bi"
+  }, 
+  {
+    "partner": "IBM", 
+    "marketUrl": "https://marketplace.ibmcloud.com", 
+    "id": 1074, 
+    "offeringId": "biginsights"
+  }, 
+  {
+    "partner": "IBM", 
+    "marketUrl": "https://marketplace.ibmcloud.com", 
+    "id": 1075, 
+    "offeringId": "biginsights"
+  }, 
+  {
+    "partner": "BlueMix", 
+    "marketUrl": "https://ace.ng.bluemix.net", 
+    "id": 1077, 
+    "offeringId": "bi"
+  }
+]

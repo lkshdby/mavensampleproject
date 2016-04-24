@@ -1,0 +1,4 @@
+INSERT INTO CLUSTERS (description, terminateTime, clusterId, name, state, launchTime, owner, id, size) VALUES ('please', 0, '2c9e8790-440efd9d-0144-0fe0e1c2-09e0', 'test', 1, 1391835678403, 10011, 100027, 2);
+INSERT INTO CLUSTERS (description, terminateTime, clusterId, name, state, launchTime, owner, id, size) VALUES ('please', 0, '2c9e8790-440efd9d-0144-14ebb2c8-0cf3', 'Shaikh MR Demo Cluster', 1, 1391920271969, 10044, 100036, 2);
+INSERT INTO CLUSTERS (description, terminateTime, clusterId, name, state, launchTime, owner, id, size) VALUES ('testing', 0, null, '123test', 1, 1392058152289, 10045, 100037, 2);
+INSERT INTO CLUSTERS (description, terminateTime, clusterId, name, state, launchTime, owner, id, size) VALUES ('please', 0, '2c9e8790-440efd9d-0144-21b019ed-0e6f', 'Nasdaq', 1, 1392134456718, 10049, 100040, 2);

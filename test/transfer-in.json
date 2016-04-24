@@ -1,0 +1,6 @@
+{
+"username" : "IBMOS278059-1:chenhan.devtest",
+"apiKey" : "8719c47bd99f0a3ae455aa8dd8c17b0b4e1e08b31e6dd15745247afc26da1e45", 
+"src" : "swift://han-test.softlayer/Movies/Shangri-la-2.mov",
+"dest" : "/han-test"
+}

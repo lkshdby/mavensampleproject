@@ -1,0 +1,17 @@
+<div>
+	<div data-dojo-attach-point="capacityWarning">
+		<div id="offering_name"><p>${offeringName}</p><p>${subOfferingName}</p></div>
+		<hr></hr>
+		<form method='post'>
+		<p>Due to demand, IBM Cloud Analytics Application Services do not have enough resource to fulfill your order.</p>
+		<p style="display:none" data-dojo-attach-point='reorderOption'>The current estimated available on-demand capacity is ${availableNodes} nodes. You may adjust your node quantity 
+		and place your order again or contact <a href='mailto:bigcloud@us.ibm.com'>bigcloud@us.ibm.com</a> for direct sales assistance.</p>
+		<p style="display:none" data-dojo-attach-point='pleaseCallOption'>Please contact <a href='mailto:bigcloud@us.ibm.com'>bigcloud@us.ibm.com</a> for direct sales assistance.</p>
+		<hr></hr>
+		
+		<p>Click "OK" to cancel your current order. Your credit card will not be charged.</p>
+		<p></p>
+		<input value="OK" type="submit" name="submit" class="ibm_submit_btn" />
+		</form>
+	</div>
+</div>

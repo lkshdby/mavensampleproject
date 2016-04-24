@@ -1,0 +1,227 @@
+#ibm-leadspace-head.ibm-alternate {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: -moz-linear-gradient(center top , #FBFCFB 0px, #ECEEEF 100%);
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: repeat;
+    background-size: auto auto;
+    height: 50px;
+/*    padding-top: 50px;*/
+}
+#ibm-leadspace-head.ibm-alternate {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("/cpe/theme/cloud_header_1900x120.png");
+    background-origin: padding-box;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: auto auto;
+}
+#ibm-leadspace-head.ibm-alternate #ibm-leadspace-body {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: none;
+    background-origin: padding-box;
+    background-position: 0 center;
+    background-repeat: repeat;
+    background-size: auto auto;
+    height: 91px;
+}
+
+#ibm-primary-tabs {
+    height: 32px;
+    padding-top: 22px;
+}
+#ibm-primary-tabs ul.ibm-tabs li a {
+    color: #012A4F;
+    text-shadow: 0 0 1px #FFFFFF;
+}
+#ibm-primary-tabs ul.ibm-tabs li a, #ibm-primary-tabs ul.ibm-tabs li a:hover, #ibm-primary-tabs ul.ibm-tabs li a:focus {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: none;
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: repeat;
+    background-size: auto auto;
+}
+#ibm-primary-tabs ul.ibm-tabs li a:hover {
+    color: #05386B;
+}
+#ibm-primary-tabs ul.ibm-tabs li.ibm-active a, #ibm-primary-tabs ul.ibm-tabs li.ibm-active a:hover, #ibm-primary-tabs ul.ibm-tabs li a.selected, #ibm-primary-tabs ul.ibm-tabs li a.selected:hover {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: none;
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: repeat;
+    background-size: auto auto;
+}
+#ibm-primary-tabs ul.ibm-tabs li a {
+    margin-left: 16px;
+    margin-right: 16px;
+    padding-left: 0;
+    padding-right: 0;
+}
+.ibm-tabs {
+    float: right;
+}
+#subnav-header li a.active, #ibm-primary-tabs ul.ibm-tabs li a.selected {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: none;
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: repeat;
+    background-size: auto auto;
+    border-bottom-color: #00B2EF;
+    border-bottom-style: solid;
+    border-bottom-width: 3px;
+    font-weight: bold;
+    padding-bottom: 16px;
+}
+#clusterGrid {
+	height: 300px;
+}
+p.dialog_message {
+	font-size: 13px;
+}
+p.todo {
+	font-size: 13px;
+	font-weight: bold;
+	color: #ff8080;
+}
+
+#wizard_container div.content_pane {
+	padding: 8px 4px 12px 4px;
+}
+
+#wizard_container p {
+	padding: 2px 2px 2px 2px !important;
+	font-size: 12px;
+}
+
+#wizard_container p.framework_description {
+	color: #404040;	
+}
+
+#wizard_container p.parameter_section_head {
+	font-weight: bold;
+	font-size: 14px;
+	margin-top: 16px;
+	margin-bottom: 4px;
+}
+
+#wizard_container p.parameter_description {
+	color: #808080;
+}
+
+#wizard_container p.edit_links {
+	text-align: right;
+}
+#wizard_container td.heading {
+	font-size: 20px;
+	font-weight: bold;
+	color: #303030;
+	margin-top: 6px;
+	margin-bottom: 16px;
+}
+
+#wizard_container td.wizard_step {
+	font-size: 14px;
+	color: #404040;
+	margin-top: 6px;
+	margin-bottom: 10px;
+}
+#wizard_container .parameter_name {
+	font-weight: bold;
+	padding-left: 40px;
+	width: 200px;
+	vertical-align: top;
+	font-size: 12px;
+}
+#wizard_container .parameter_value {
+	padding-right: 40px;
+	font-size: 12px;
+}
+
+#wizard_container .clicky:hover {
+	text-decoration: underline;
+	cursor: pointer;
+	color: navy;
+}
+
+#wizard_container .large {
+	font-size: 16px;	
+	font-weight: bold;
+}
+
+#wizard_container div.indent_box {
+	padding-left: 20px;
+}
+
+#promo_code_container p {
+	padding: 4px 2px 4px 2px !important;
+	font-size: 12px;
+}
+
+#promo_code_container td {
+	padding: 4px 2px 4px 2px !important;
+	font-size: 12px;
+}
+
+#promo_code_container .heading {
+	font-weight: bold;
+	font-size: 14px;
+}
+
+#promo_code_container .parameter_name {
+	font-weight: bold;
+	font-size: 14px;
+	width: 140px;
+}
+#promo_code_container .parameter_value {
+	padding-right: 40px;
+	font-size: 14px;
+	color: #404040;
+}
+
+table.cpe_layout {
+	border: 0px;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.cluster_name {
+	position: relative;
+}
+
+.cluster_name .cluster_details { 
+	display: none;
+}
+
+.cluster_name:hover .cluster_details {
+	display: block;
+}
+
+.cluster_details {
+	position: absolute;
+	left: 40px;
+	z-index: 1000;
+	border: 1px solid #ffd971;
+	background-color: #fffdce;
+	padding: 5px;
+	font-size: 12px;
+	width: 350px;
+}
+
+.cluster_details p {
+	padding: 2px !important;
+}
