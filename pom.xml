@@ -5,11 +5,9 @@
 	<artifactId>cpe</artifactId>
 	<packaging>war</packaging>
 	<version>2.0.0.0</version>
-	
-<!-- 	<properties>
+	<properties>
 		<cpe.version>${project.version}</cpe.version>
 	</properties>
- -->
 	<profiles>
 		<profile>
 			<id>icas-build-engine</id>
